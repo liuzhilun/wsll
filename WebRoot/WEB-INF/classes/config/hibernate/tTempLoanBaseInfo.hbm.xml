@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ecloud.model">
+	<class name="LoanBase" table="T_TEMP_LOAN_BASE_INFO">
+
+		<id name="appNo" column="APP_NO">
+			<generator class="assigned" />
+		</id>
+		<property name="custName">
+			<column name="CUST_NAME" />
+		</property>
+		<property name="certNo">
+			<column name="CERT_NO" />
+		</property>
+		<property name="totalPrice">
+			<column name="TOTAL_PRICE" />
+		</property>
+		<property name="firDownPay">
+			<column name="FIR_DOWN_PAY" />
+		</property>
+		<property name="loanAmt">
+			<column name="LOAN_AMT" />
+		</property>
+		<property name="firRepayDate">
+			<column name="FIR_REPAY_DATE" />
+		</property>
+		<property name="mthRepayDate">
+			<column name="MTH_REPAY_DATE" />
+		</property>
+		<property name="mthRepayAmt">
+			<column name="MTH_REPAY_AMT" />
+		</property>
+		<property name="installNum">
+			<column name="INSTALL_NUM" />
+		</property>
+		<property name="repayAccount">
+			<column name="REPAY_ACCOUNT" />
+		</property>
+		<property name="repayAccountName">
+			<column name="REPAY_ACCOUNT_NAME" />
+		</property>
+		<property name="applyDate">
+			<column name="APPLY_DATE" />
+		</property>
+		<property name="phoneNumber">
+			<column name="PHONE_NUMBER" />
+		</property>
+		<property name="chanNo">
+			<column name="CHAN_NO" />
+		</property>
+		<property name="ppNo">
+			<column name="ppNo" />
+		</property>
+		<property name="busCode">
+			<column name="BUS_CODE" />
+		</property>
+		<property name="remark">
+			<column name="remark" />
+		</property>
+		<property name="remark1">
+			<column name="remark1" />
+		</property>
+		<property name="goodsType">
+			<column name="goods_type" />
+		</property>
+		<property name="brand">
+			<column name="brand" />
+		</property>
+		<property name="marques">
+			<column name="marques" />
+		</property>
+	</class>
+</hibernate-mapping>

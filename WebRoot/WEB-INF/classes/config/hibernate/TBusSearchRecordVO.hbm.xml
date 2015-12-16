@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ecloud.model">
+ <class name="TBusSearchRecordVO" table="T_BUS_SEARCH_RECORD">
+  	<id	name="tableKey" type="string" column="table_key">
+		<generator class="assigned"/>
+	</id>
+	<property name="searchUserLoginName" column="search_user_login_name" type="string" />
+	<property name="searchChannel" column="search_channel" type="string" />
+	<property name="searchRecordTime" column="search_record_time" type="java.util.Date" />
+	<property name="searchMobNum" column="search_mob_num" type="string" />
+	<property name="searchCertNo" column="search_cert_no" type="string" />
+	<property name="searchCustName" column="search_cust_name" type="string" />
+	<property name="searchBankAcc" column="search_bank_acc" type="string" />
+	<property name="searchResult" column="search_result" type="string" />
+	<property name="remark" column="remark" type="string" />
+	<property name="searchType" column="search_type" type="string" />
+ </class>
+</hibernate-mapping>

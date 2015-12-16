@@ -1,0 +1,111 @@
+1、产品期数利率查询接口 "code": 0成功|其他为失败{code:1,message:'失败原因'}
+	参数：chanNo=002 002为企业编号
+	请求方式：$.ajax({
+					url :'http://test.mqfenqi.com/wsll//loanApp/getProdInfo.wsll?chanNo=002',
+					type : "get",
+					dataType: 'JSONP',
+					success : function(msg){
+						//获取返回数据处理
+						msg.code;
+						msg.data.prodvo[1].perProd[1].insFeeRate;
+					}
+				});
+	返回数据："{
+    "code": 0,
+    "data": {
+        "chanNo": "002",
+        "chanName": "成都分公司商户",
+        "prodvo": [
+            {
+                "prodNo": "10001",
+                "prodName": "S类客户",
+                "chanNo": "002",
+                "rateYear": "1.33",
+                "loanMin": "800",
+                "loanMax": "10000",
+                "perProd": [
+                    {
+                        "ppNo": "CB611A7BFFA8016A00DE5B73CA414BDF",
+                        "prodNo": "10001",
+                        "ppValue": 6,
+                        "ppRate": 0.67,
+                        "amRate": 0.68,
+                        "insFeeRate": 0.69,
+                        "difference": "0"
+                    }
+                ]
+            },
+            {
+                "prodNo": "10002",
+                "prodName": "I类客户",
+                "chanNo": "002",
+                "rateYear": "1.67",//利率
+                "loanMin": "800",
+                "loanMax": "10000",
+                "perProd": [
+                    {
+                        "ppNo": "CB629302FFA8016A01192738AA61214F",//计算时使用的具体产品期数利率等...
+                        "prodNo": "10002",
+                        "ppValue": 6,//期数
+                        "ppRate": 1.73,
+                        "amRate": 0.58,
+                        "insFeeRate": 0.69,
+                        "difference": "0"
+                    },
+                    {
+                        "ppNo": "CB62A9DDFFA8016A0124B13A9C9BFDF9",
+                        "prodNo": "10002",
+                        "ppValue": 9,
+                        "ppRate": 1.7,
+                        "amRate": 0.55,
+                        "insFeeRate": 0.69,
+                        "difference": "0"
+                    }
+                ]
+            }
+        ]
+    }
+
+
+
+2、申请提交接口 "code": 0成功|其他为失败
+	参数说明：
+	var params = {
+			custName : '测试客户',//客户姓名 
+			certNo : '51051119900101001x',//身份证号码 
+			mthRepayAmt : 300,//月还款 必须
+			installNum : 12,//分期期数 必须
+			totalPrice : 3000,//商品总价 必须
+			firDownPay : 1000,//首付金额 必须
+			loanAmt : 2000,//贷款金额 必须
+			phoneNumber : 13312431234,//客户电话 
+			chanNo : 002,//企业编号 必须
+			ppNo : 'CB62A9DDFFA8016A0124B13A9C9BFDF9',//产品编号 必须
+			marques : 'S5', //商品型号必须
+			brand : '三星', //商品品牌必须
+			goodsType : '手机', //商品类型必须
+			firRepayDate : '',//首次还款日
+			mthRepayDate : '',//每月还款日
+			repayAccount : '',//还款账户
+			repayAccountName : '',//还款帐户名
+			busCode : '',//业务识别码
+			remark1 : ''//备用字段1
+		}
+	http://test.mqfenqi.com/wsll/loanApp/push.wsll?goodsType=手机&brand=三星&marques=s5&custName=测试客户&certNo=51051119900101001x&mthRepayAmt=300&installNum=12&totalPrice=3000&firDownPay=1000&loanAmt=2000&phoneNumber=13312431234&chanNo=002&ppNo=CB62A9DDFFA8016A0124B13A9C9BFDF9'
+	var para = 'goodsType=手机&brand=三星&marques=s5&custName=测试客户&certNo=51051119900101001x&mthRepayAmt=300&installNum=12&totalPrice=3000&firDownPay=1000&loanAmt=2000&phoneNumber=13312431234&chanNo=002&ppNo=CB62A9DDFFA8016A0124B13A9C9BFDF9';
+	$.ajax({
+		   type: "GET",
+		   url: 'http://test.mqfenqi.com/wsll/loanApp/push.wsll',
+		   //url: 'http://test.mqfenqi.com/wsll/loanApp/push.wsll' + para,
+		   async: false,
+		   data : params,
+		   dataType: 'JSONP',
+		   success: function(msg){
+			   alert(msg.code);//0
+		   }
+		});
+	参数建议使用data:{}提交，也可以使用？追加到url后
+	如果提交数据成功：{code:0,message:'12345678'}，
+	12345678为业务代码，提供给销售到后台录入客户申请分期数据
+	
+	失败状态：{code:1,message:'失败原因'}

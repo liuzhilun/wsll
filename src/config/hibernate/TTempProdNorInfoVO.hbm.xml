@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ecloud.model">
+ <class name="TTempProdNorInfoVO" table="t_temp_prod_nor_info">
+  	<id	name="prodNo" type="string" column="PROD_NO">
+		<generator class="uuid"/>
+	</id>
+	<property name="prodName" column="PROD_NAME" type="string" />
+	<property name="chanNo" column="CHAN_NO" type="string" />
+	<property name="rateYear" column="RATE_YEAR" type="string" />
+	<property name="loanMin" column="LOAN_MIN" type="string"/>
+	<property name="loanMax" column="LOAN_MAX" type="string" />
+	<property name="rateBus" column="RATE_BUS" type="string" />
+ </class>
+</hibernate-mapping>

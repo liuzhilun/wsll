@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ecloud.model">
+ <class name="TTempPeriodProdVO" table="t_temp_period_prod">
+  	<id	name="ppNo" type="string" column="PP_NO">
+		<generator class="assigned"/>
+	</id>
+	<property name="prodNo" column="PROD_NO" type="string" />
+	<property name="ppRate" column="PP_RATE" type="double" />
+	<property name="ppValue" column="PP_VALUE" type="int" />
+	<property name="amRate" column="AM_RATE" type="double" />
+	<property name="insFeeRate" column="INS_FEE_RATE" type="double" />
+	<property name="difference" column="DIFFERENCE"/>
+ </class>
+</hibernate-mapping>

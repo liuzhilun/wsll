@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ecloud.model">
+ <class name="TTempChannelInfoVO" table="t_temp_channel_info">
+  	<id	name="chanNo" type="string" column="CHAN_NO">
+		<generator class="assigned"/>
+	</id>
+	<property name="chanName" column="CHAN_NAME" type="string" />
+	<property name="chinapayMerid" column="CHINAPAY_MERID" type="string" />
+	<property name="chinapayMerkey" column="CHINAPAY_MERKEY" type="string" />
+	<property name="chinapayUsername" column="CHINAPAY_USERNAME" type="string" />
+	<property name="chinapayPassword" column="CHINAPAY_PASSWORD" type="string" />
+	<property name="comOrg" column="COM_ORG" type="string" />
+	<property name="comAcc" column="COM_ACC" type="string" />
+	<property name="openOrg" column="OPEN_ORG" type="string" />
+	<property name="repayType" column="REPAY_TYPE" type="string" />
+	<property name="settleOrder" column="SETTLE_ORDER" type="string" />
+	<property name="appFlow" column="APP_FLOW" type="string" />
+	<property name="managerUser" column="MANAGER_USER" type="string" />
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "sql-map-2.dtd">
+<sqlMap namespace="busBlack">
+<resultMap id="mapBusBlack" class="com.ecloud.model.TBusBlackListVO" >
+	<result property="tableKey" column="table_key" />
+	<result property="custName" column="cust_name" />
+	<result property="custCertNo" column="cust_cert_no" />
+	<result property="custCertType" column="cust_cert_type" />
+	<result property="custMobNum" column="cust_mob_num" />
+	<result property="bankAccount" column="bank_account" />
+	<result property="status" column="status" />
+	<result property="recordTime" column="record_time" />
+	<result property="recordUser" column="record_user" />
+	<result property="applyUser" column="apply_user" />
+	<result property="applyTime" column="apply_time" />
+	<result property="remark" column="remark" />
+  </resultMap>
+	<select id="queryBusBlack" resultMap="mapBusBlack" parameterClass="java.util.Map">
+  	select 
+  *
+  	from T_BUS_BLACK_LIST  t where 1=1
+			 <isNotEmpty prepend="and" property="custCertNo">
+			 	t.cust_cert_no = #custCertNo#
+			 </isNotEmpty>
+			  <isNotEmpty prepend="or" property="custMobNum">
+			 	t.cust_mob_num = #custMobNum#
+			 </isNotEmpty>
+			  <isNotEmpty prepend="or" property="bankAccount">
+			 	t.bank_account = #bankAccount#
+			 </isNotEmpty>
+  </select>
+</sqlMap>

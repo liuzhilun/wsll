@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "sql-map-2.dtd">
+<sqlMap namespace="rest">
+	<select id="queryTTempLoanBaseInfo" resultClass="com.ecloud.model.LoanBase">
+		SELECT
+			t.APP_NO appNo,
+			t.CUST_NAME custName,
+			t.CERT_NO certNo,
+			t.TOTAL_PRICE totalPrice,
+			t.FIR_DOWN_PAY firDownPay,
+			t.LOAN_AMT loanAmt,
+			t.FIR_REPAY_DATE firRepayDate,
+			t.MTH_REPAY_DATE mthRepayDate,
+			t.MTH_REPAY_AMT mthRepayAmt,
+			t.INSTALL_NUM installNum,
+			t.REPAY_ACCOUNT repayAccount,
+			t.REPAY_ACCOUNT_NAME repayAccountName,
+			t.APPLY_DATE applyDate,
+			t.PHONE_NUMBER phoneNumber,
+			t.CHAN_NO chanNo,
+			t.BUS_CODE busCode,
+			t.remark remark,
+			t.remark1 remark1,
+			t.PP_NO ppNo,
+			t.goods_type goodsType,
+			t.brand brand,
+			t.marques marques,
+		FROM T_TEMP_LOAN_BASE_INFO t
+	</select>
+
+	<select id="queryTTempLoanBaseInfoCount"  resultClass="int">
+		SELECT
+			COUNT(1)
+		FROM T_TEMP_LOAN_BASE_INFO
+	</select>
+
+	<delete id="delTTempLoanBaseInfo"  parameterClass="string"> 
+		DELETE FROM T_TEMP_LOAN_BASE_INFO $delSql$ 
+	</delete>
+	
+	<insert id="insertLoanBase" parameterClass="com.ecloud.model.LoanBase"> 
+		insert into T_TEMP_LOAN_BASE_INFO 
+		(CUST_NAME, CERT_NO, TOTAL_PRICE, 
+		FIR_DOWN_PAY, LOAN_AMT, FIR_REPAY_DATE, 
+		MTH_REPAY_DATE, MTH_REPAY_AMT, INSTALL_NUM,
+		 REPAY_ACCOUNT, REPAY_ACCOUNT_NAME, APPLY_DATE, 
+		 PHONE_NUMBER, CHAN_NO, PP_NO, BUS_CODE, 
+		 REMARK, REMARK1, APP_NO,marques,brand,goods_type) 
+		values (#custName#,
+				#certNo#,
+				#totalPrice#,
+				#firDownPay#,
+				#loanAmt#,
+				#firRepayDate#, 
+				#mthRepayDate#,
+				#mthRepayAmt#, 
+				#installNum#, 
+				#repayAccount#,
+				#repayAccountName#,
+				#applyDate#,
+				#phoneNumber#, 
+				#chanNo#,
+				#ppNo#,
+				#busCode#,
+				#remark#,
+				#remark1#,
+				#appNo#,
+				#goodsType#,
+				#brand#,
+				#marques#)
+    </insert>
+</sqlMap>

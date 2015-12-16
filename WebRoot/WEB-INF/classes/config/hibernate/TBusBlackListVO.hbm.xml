@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ecloud.model">
+ <class name="TBusBlackListVO" table="T_BUS_BLACK_LIST">
+  	<id	name="tableKey" type="string" column="table_key">
+		<generator class="assigned"/>
+	</id>
+	<property name="custName" column="cust_name" type="string" />
+	<property name="custCertNo" column="cust_cert_no" type="string" />
+	<property name="custCertType" column="cust_cert_type" type="string" />
+	<property name="custMobNum" column="cust_mob_num" type="string" />
+	<property name="bankAccount" column="bank_account" type="string" />
+	<property name="status" column="status" type="string" />
+	<property name="recordTime" column="record_time" type="java.util.Date" />
+	<property name="recordUser" column="record_user" type="string" />
+	<property name="applyUser" column="apply_user" type="string" />
+	<property name="applyTime" column="apply_time" type="java.util.Date" />
+	<property name="remark" column="remark" type="string" />
+ </class>
+</hibernate-mapping>

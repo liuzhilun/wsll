@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ecloud.model">
+ <class name="TBusUserInfoVO" table="t_bus_users">
+  	<id	name="tableKey" type="string" column="table_key">
+		<generator class="assigned"/>
+	</id>
+	<property name="userName" column="user_name" type="string" />
+	<property name="userLoginPwd" column="user_login_pwd" type="string" />
+	<property name="createTime" column="create_time" type="java.util.Date" />
+	<property name="lastLoginTime" column="last_login_time" type="java.util.Date" />
+	<property name="userSex" column="user_sex" type="string" />
+	<property name="userLoginName" column="user_login_name" type="string" />
+	<property name="userPhoneNum" column="user_phone_num" type="string" />
+	<property name="remark" column="remark" type="string" />
+	<property name="userCertNo" column="user_cert_no" type="string" />
+	<property name="userCertType" column="user_cert_type" type="string" />
+	<property name="userComName" column="user_com_name" type="string" />
+	<property name="userComAddr" column="user_com_addr" type="string" />
+	<property name="userComType" column="user_com_type" type="string" />
+	<property name="userEmail" column="user_email" type="string" />
+ </class>
+</hibernate-mapping>
