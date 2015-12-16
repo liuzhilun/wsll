@@ -3,7 +3,7 @@ package com.ecloud.model;
 
 
 public class LoanBase {
-	private String appNo;//业务编号
+	private String appNo;//业务编号哦
 	private String custName;//客户姓名
 	private String certNo;//身份证号码
 	private String totalPrice;//商品总价
